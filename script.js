@@ -5,10 +5,12 @@ let guess = document.querySelector('.guess');
 let check = document.querySelector('.check');
 let mainBody = document.querySelector('body');
 let againButton = document.querySelector('.again');
+let highField = document.querySelector('.highscore');
 
 
 let randomNumber = Math.trunc(Math.random() * 20) + 1;
 let currentScore = 20;
+let highScore = 0;
 
 check.addEventListener("click", function () {
 
@@ -26,6 +28,13 @@ check.addEventListener("click", function () {
 
         mainBody.style.backgroundColor = '#60b347';
         largeNumber.style.width = '30rem';
+
+        if (currentScore > highScore) {
+
+            highScore = currentScore;
+            highField.textContent = highScore;
+
+        }
 
 
         // When guess is too high
