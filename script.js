@@ -37,28 +37,13 @@ check.addEventListener("click", function () {
         }
 
 
-        // When guess is too high
-    } else if (guessNumber > randomNumber) {
+        // When guess is incorrect
+    } else if (guessNumber !== randomNumber) {
 
         if (currentScore > 1) {
 
-            myMessage.textContent = '⏫ Too high!';
-            currentScore--;
-            score.textContent = currentScore;
+            myMessage.textContent = guessNumber > randomNumber ? '⏫ Too high!' : '⏬ Too low!';
 
-        } else {
-
-            myMessage.textContent = '💥 You lost!';
-            score.textContent = currentScore - 1;
-
-        }
-
-        // When guess is too low
-    } else if (guessNumber < randomNumber) {
-
-        if (currentScore > 1) {
-
-            myMessage.textContent = '⏬ Too low!';
             currentScore--;
             score.textContent = currentScore;
 
@@ -72,6 +57,41 @@ check.addEventListener("click", function () {
     }
 
 });
+
+// When guess is too high
+
+// else if (guessNumber > randomNumber) {
+
+//     if (currentScore > 1) {
+
+//         myMessage.textContent = '⏫ Too high!';
+//         currentScore--;
+//         score.textContent = currentScore;
+
+//     } else {
+
+//         myMessage.textContent = '💥 You lost!';
+//         score.textContent = currentScore - 1;
+
+//     }
+
+// When guess is too low
+// } else if (guessNumber < randomNumber) {
+
+//     if (currentScore > 1) {
+
+//         myMessage.textContent = '⏬ Too low!';
+//         currentScore--;
+//         score.textContent = currentScore;
+
+//     } else {
+
+//         myMessage.textContent = '💥 You lost!';
+//         score.textContent = currentScore - 1;
+
+//     }
+
+// }
 
 againButton.addEventListener("click", function () {
 
